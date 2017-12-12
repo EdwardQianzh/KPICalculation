@@ -64,16 +64,19 @@ public class KPICalculator {
         }
     }
 
+    // 获取日期，年-月-日
     public static String getDate(String s){
         String[] str = s.split("\\s+");
         return  str[0];
     }
 
+    // 获取时间，小时数
     public static int getHour(String s) throws ParseException{
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return  format.parse(s).getHours();
     }
 
+    // 获取24小时的KPI分布
     public double[][] get24HoursKPIByDate(String date, List<CNCMachine> machines){
         int numOfStatus = 4;
         double[][] kpis = new double[24][numOfStatus];
